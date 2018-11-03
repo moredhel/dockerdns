@@ -1,0 +1,7 @@
+. {
+    hosts /in/hosts local {
+      fallthrough
+    }
+    forward . /etc/resolv.conf
+    log
+}

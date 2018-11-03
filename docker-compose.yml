@@ -1,0 +1,16 @@
+version: "3"
+services:
+  coredns:
+    image: coredns/coredns
+    ports:
+      - "5553:53/udp"
+    volumes:
+      - "./coredns:/in"
+    command: -conf /in/Corefile
+  updater:
+    build: .
+    # privileged: true
+    volumes:
+      - "./coredns:/in"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    command: /app
