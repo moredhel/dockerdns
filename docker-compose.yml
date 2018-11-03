@@ -2,6 +2,7 @@ version: "3"
 services:
   coredns:
     image: coredns/coredns
+    restart: always
     ports:
       - "53:53/udp"
     labels:
@@ -14,6 +15,7 @@ services:
   updater:
     build: .
     image: moredhel/dockerdns:1.0
+    restart: always
     # privileged: true
     volumes:
       - "./coredns:/in"
