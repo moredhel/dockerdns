@@ -3,14 +3,21 @@ services:
   coredns:
     image: coredns/coredns
     ports:
-      - "5553:53/udp"
+      - "53:53/udp"
+    labels:
+      - dns.host=core.dns.local
+    environment:
+      - UPSTREAM=10.100.0.1
     volumes:
       - "./coredns:/in"
     command: -conf /in/Corefile
   updater:
     build: .
+    image: moredhel/dockerdns:1.0
     # privileged: true
     volumes:
       - "./coredns:/in"
       - "/var/run/docker.sock:/var/run/docker.sock"
+    labels:
+      - dns.host=scheduler.dns.local
     command: /app

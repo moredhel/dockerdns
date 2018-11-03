@@ -2,6 +2,8 @@
     hosts /in/hosts local {
       fallthrough
     }
-    forward . /etc/resolv.conf
+    proxy . {$UPSTREAM}
+
+    health
     log
 }
