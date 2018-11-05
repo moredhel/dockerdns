@@ -8,7 +8,7 @@ services:
     labels:
       - dns.host=core.dns.local
     environment:
-      - UPSTREAM=10.100.0.1
+      - UPSTREAM=8.8.8.8
     volumes:
       - "./coredns:/in"
     command: -conf /in/Corefile
