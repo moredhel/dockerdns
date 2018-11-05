@@ -1,4 +1,4 @@
-This is a slightly weird project inspired by a talk given at NixCon 2018.
+This is a project inspired by a talk given at NixCon 2018.
 
 
 Wouldn't it be great to have nice, memorable and stable names for all your containering needs?
