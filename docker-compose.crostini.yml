@@ -1,0 +1,5 @@
+version: "3"
+services:
+  coredns:
+    ports:
+      - "100.115.92.202:53:53/udp"
