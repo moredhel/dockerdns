@@ -15,7 +15,7 @@ And now, let's see if we can hit the DNS server's health-check endpoint.
 
 ``` shell
 # it seems this may not work if curl is not compiled with the required flags
-curl --dns-servers localhost core.dns.local:8080/health
+curl -i `dig @127.0.0.1 +short core.dns.local`:8080/health
 ```
 
 # TODO
