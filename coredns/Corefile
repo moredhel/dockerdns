@@ -1,13 +1,12 @@
-local {
-    hosts /in/hosts local {
+local, int, cnt {
+    hosts /in/hosts {
       fallthrough
     }
-
-    health
     log
 }
 
 . {
+    health
     cache
     proxy . {$UPSTREAM}
 }

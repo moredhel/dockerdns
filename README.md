@@ -7,7 +7,8 @@ This is just that project, a dns server which monitors the creation of docker co
 Let's try it out! (note: you may have to turn off/kill dnsmasq with a `kill dnsmasq`)
 
 ``` shell
-docker-compose up -d
+docker-compose up -d # linux
+docker-compose -f docker-compose.yml -f docker-compose.crostini.yml up -d # crostini
 ```
 
 And now, let's see if we can hit the DNS server's health-check endpoint.
